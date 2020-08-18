@@ -13,7 +13,7 @@ library(MASS)
 library(car)
 library(caTools)
 
-
+##Raw data of Customer's Billing Details
 totalbill<-read.csv("D:/surveyc/bill.csv")
 
 names(totalbill)<-gsub(" ","_",fixed=TRUE,names(totalbill))
@@ -31,7 +31,6 @@ totalbill$start_bill_period=as.Date(totalbill$start_bill_period,format="%Y%m%d")
 totalbill$end_bill_period=as.Date(totalbill$end_bill_period,format="%Y%m%d")
 
 str(totalbill)
-#totalbill$Month=format(totalbill$Posting_Date,"%b")
 
 totalbill$year=format(totalbill$posting_date,"%Y")
 totalbill$month_start=format(totalbill$start_bill_period,"%m")
@@ -56,6 +55,7 @@ totalbill$billperday=ifelse(totalbill$billed_unit!=0,totalbill$billed_unit/total
 totalbill$bill_start=abs((totalbill$billperday)*(totalbill$originaldays_start-as.numeric(format(totalbill$start_bill_period,"%d"))))
 totalbill$bill_end=abs((totalbill$billperday)*(as.numeric(format(totalbill$end_bill_period,"%d"))))
 
+##Master Data of customers
 master<-read.csv("D:/surveyc/master.csv")
 
 totalbill<-merge(totalbill,master,by="ca",all.x=TRUE)
@@ -65,8 +65,6 @@ totalbill$time_tpddl<-(Sys.Date()-totalbill$move_in_date)/365
 totalbill$ca=as.character(totalbill$ca)
 
 totalbill2<-totalbill[c(1,3,4,6,9,12,14,28,29,30,31,34,35,36,37,40,41)]
-
-
 totalbill2<-totalbill2[!is.na(totalbill2$start_bill_period),]
 totalbill2<-totalbill2[!totalbill2$days==0,]
 
@@ -93,17 +91,6 @@ sorted_total$add_bill_s[1]<-sorted_total$bill_start[1]
 sorted_total$add_bill_s=as.numeric(sorted_total$add_bill_s)
 sorted_total$add_bill=as.numeric(sorted_total$add_bill)
 
-# for( i in 1:NROW(sorted_total))
-# {
-#   sorted_total$add_bill_s[1]=sorted_total$bill_start[1]
-#   if(sorted_total$CA[i]==sorted_total$CA[i+1] & sorted_total$year[i]!=sorted_total$year[i+1] & sorted_total$month_end[i]!=sorted_total$month_start[i+1])
-#     sorted_total$add_bill_s[i+1]<-sorted_total$bill_start[i+1]
-#   else
-#     sorted_total$add_bill_s[i+1]<-0
-# }
-
-
-
 summary(sorted_total$add_bill)
 summary(sorted_total$add_bill_s)
 
@@ -111,11 +98,6 @@ sorted_total<-sorted_total[!is.na(sorted_total$add_bill),]
 
 summary1=sqldf("select ca,year,month_end, month_start,avg(abs(add_bill)) as Avg_bill_end, avg(abs(add_bill_s)) as Avg_bill_start from sorted_total group by ca, year,month_end")
 
-# for( i in 1:NROW(summary1))
-# {
-#   if(summary1$CA[i]==summary1$CA[i+1] & summary1$year[i]==summary1$year[i+1] & summary1$month_end[i]==summary1$month_start[i+1] & summary1$Avg_bill_end[i+1]!=0.0000)
-#     summary1$Avg_bill_end[i]<-summary1$Avg_bill_end[i]+summary1$Avg_bill_start[i+1]
-# }
 
 summary1$Avg_bill_end<-lapply(1:NROW(summary1), function(i){
   ifelse(summary1$ca[i]==summary1$ca[i+1] & summary1$year[i]==summary1$year[i+1] & summary1$month_end[i]==summary1$month_start[i+1] & summary1$Avg_bill_end[i+1]!=0.0000,summary1$Avg_bill_end[i]+summary1$Avg_bill_start[i+1],
@@ -146,6 +128,7 @@ s3<-s3[-c(2:35,84:91)]
 
 names(s3)
 
+#Function for Data Cleaning of variables of dataframe
 var_Summ=function(x){
   if(class(x)=="numeric"|class(x)=="int"){
     Var_Type=class(x)
@@ -209,6 +192,9 @@ M1_fun <- function(x){
 names(s4)
 #s4$time2015_10<-ifelse(s4$time2015_10<quantile( s4$time2015_10, .0375,na.rm=TRUE ),quantile( s4$time2015_10, .0375,na.rm=TRUE ),s4$time2015_10)
 s4[2:49]<-sapply(s4[2:49],function(x){M1_fun(x)})
+
+##Feature Extraction
+##Avg Bill and Percentage Change in Bills from previous months,last year, etc.
 s4$avg_bill_4yrs<-rowMeans(s4[2:49])
 summary(s4$avg_bill_4yrs)
 names(s4)
@@ -247,7 +233,8 @@ s4$change_perc_sep3<-(s4$time2016_9-s4$time2017_9)/s4$time2016_9
 
 names(s4)[1]<-"CA"
 names(s4)
-#summer winter sppring autumn
+
+#summer winter spring autumn Avg Bill Variables
 #summer apr may june rain:july aug : autum :sep oct winter:nov dec jan spring: feb march
 s4$sum14<-rowMeans(s4[8:10])
 s4$sum15<-rowMeans(s4[20:22])
@@ -311,6 +298,7 @@ tot15<-sqldf("select CA,rate_category,avg(sanction_load) as sanction_load,classi
 
 finaldata<-merge(finalbill,tot15,by="CA",all.x = TRUE)
 write.csv(finaldata,"D:/surveyc/modeldata1.csv")
+
 #variables from survey data solar and dsm
 
 d1<-read_excel("D:/survey/data.xlsx",na=c("",NA),sheet=1)
@@ -366,10 +354,8 @@ model2[4:45]<-100*model2[4:45]
 #Correlation Matrix
 corrm<- cor(model2[-c(1,2,53,54,46:50)]) 
 
-require(dplyr)
 require(psych)
 require(GPArotation)
-require(dplyr)
 #Scree Plot
 scree(corrm, factors=T, pc=T, main="Scree Plot", hline=NULL, add=FALSE) ### SCREE PLOT
 
@@ -480,6 +466,7 @@ my_num_data5<-t(data.frame(apply(model4[num_var5], 2, var_Summ)))
 #writing outlier removed file
 
 write.csv(model4,"D:/surveyc/outlier_model_factor.csv")
+
 model4<-read.csv("D:/surveyc/outlier_model_factor.csv")
 inputdata_final2<-model4
 inputdata_final3= scale(inputdata_final2) #standardization
