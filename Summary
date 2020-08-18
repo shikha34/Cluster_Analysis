@@ -1,0 +1,171 @@
+PRIMARY RESEARCH STUDY
+
+A primary research of 655 consumers was conducted to gauge the market needs and potential benefits of Solar Rooftop solution, Home Automation, Demand Side Management, Automated Demand Response and Electric Vehicles. Around 85 % of the consumers surveyed were from Residential sector, 7% from Commercial and 5% from the Industrial sector. Majority of the consumers surveyed had self-owned houses. Also, around 31% of the respondents had age between 31-50 years.
+
+TOOLS & TECHNIQUES
+ 
+The statistical tool that has been used in this analysis is R Studio along with statistical techniques such as Chi Square Test and K-Mediods Clustering Methodology.
+
+1.	SOLAR ROOFTOP SOLUTION
+
+1.1 Key Insights
+
+Customers with Solar Rooftop Solution
+
+•	Only 5% of the surveyed customers had installed Solar Rooftop at their premises, which indicates that there is a huge market potential which remains untapped.
+
+•	Out of the customers who have not installed Solar Roof Top and also have interest in this technology, 90% have self-owned premises. Hence these customers can be targeted immediately.
+
+•	The customers who have installed Solar Rooftop, around 66% of consumers belong to age category 31-40 years and have sanctioned load of 10-25 KW. Also, 48% of these people do not have battery storage attached. These people are cautious about their bill and monitor their consumption through monthly bill.
+
+Electricity Bill Monitoring Behaviour
+
+•	Only 7% of the consumers monitor their monthly bill through Web apps and mobile devices. Hence, there is a need to enhance the awareness about usage of digital technology amongst the people and review the effectiveness of these applications. Large number of people (around 69%) agree that the solar rooftop solution is cost effective. 58% of the respondents are happy with the Solar Rooftop solution and around 60% of the people who have installed Solar Rooftop at their premises will recommend it to others.
+
+1.2 Chi Square Test Result
+
+•	Statistical test such as Chi Square indicated that “Age of consumer” is a factor that influences interest in solar if the customers are provided with financial assistance. Also, 70% respondents reported they would be interested if financial assistance is provided to them. Awareness about financial support from government in solar installation may mitigate the concerns to some extent.
+
+•	Out of the 452 Respondents who had not installed Solar Rooftop solution, 30% of the respondents reported disinterest due to ‘High upfront cost’. One may tie up with Financial Institutions for large scale implementation to manage the upfront cost.
+
+1.3 Cluster Analysis Insights
+
+Unsupervised machine learning algorithm such as K-Mediods Clustering was used to segment similar set of 189 Residential consumers and 35 Commercial and Industrial customers based on their behavioural pattern. The variables used to find similar set of clusters were Sanction load, time spent with the Utility, percentage change in consumption pattern over the years, months and seasons( 2015-2017) and survey parameters pertaining to  Awareness, Interest, benefits and factors impacting decisions making of consumers.
+Residential Customers Behaviour
+•	Cluster 1 consisted of consumers with average sanction load of 4-5 KW and have been associated with the Utility since 6 years. The consumers had medium fluctuations in the bill pattern over the years and different seasons and were more price conscious. These consumers are a potential target of Solar Rooftop as more than 80 % of the respondents are interested in Roof Top Solar.
+•	Cluster 2 consisted of consumers with average sanction load of 3 KW and have been associated with the Utility since 5 years. The consumers have least fluctuations in the bill pattern over the years and different seasons. These customers are most aware about the benefits of installing the Solar Rooftop solution. 
+•	Cluster 3 consisted of consumers with average sanction load of 6-10 KW and have been associated with the Utility since 6.5 years. The consumers have highest fluctuations in the bill pattern over the years and different seasons. These customers are most aware about the benefits of installing the Solar Rooftop solution and are also potential target for Solar.
+
+Commercial & Industrial Customers Behaviour
+•	Cluster 1 consisted of consumers with average sanction load of 189 KW and have been associated with the Utility since 16 years. These customers are most aware about the benefits of installing the Solar Rooftop solution and are also potential target for Solar as around 75% are interested in Solar Rooftop.
+•	Cluster 2 consisted of consumers with average sanction load of 109 KW and have been associated with the Utility since 15 years. These customers are least aware about the benefits of the Solar Rooftop and around 40 % of the consumers are not interested due to High upfront cost during installation. The cluster need to be targeted for awareness campaigns and also should be made aware about the financial assistance provided by the government.
+•	Cluster 3 consisted of consumers with average sanction load of 142 KW and have been associated with the Utility since 12 years. The consumers are not interested in Solar Rooftop solution but they are fully aware about the benefits of Solar.
+
+
+2.	HOME AUTOMATION
+
+573 Residential Customers were surveyed to assess the awareness and reasons to indulge in purchase decisions for emerging value added services such as Home Automation solution or whether they would like to automate their houses in the future. 
+
+2.1	Key Insights
+
+Benefits of Home Automation
+•	73 % of the respondents have WI-FI or Broadband connection at home. 
+•	Around 70 % of the respondents are aware that Home automation provides Centralised Control of security locks across all Residential customers. 41% agree that Home Automation provides remote monitoring of consumption through various devices. Out of the total respondents >50% are aware about the key benefit of Home Automation i.e. it avoids wastage of energy. Promoting and positioning this benefit is important as the energy saved is less expensive than to generate equivalent amount of energy. 
+•	There is a need to aware more people about the benefits of Home Automation system and leverage this market potential. Out of the respondents who are interested in Home Automation, large number of people (49%) have age less than 27 years & 37-57 years age category.
+
+Appliances wish to Automate
+•	The top appliances these customers would like to automate are AC followed by Lights, Geyser, Celling fan and Microwave. The main reason of these customers for automating their houses are : Saving on Electricity Bill and Convenience and Ease of Operation. Security did not emerge to be a top priority. 
+
+2.2	Chi Square Test Result
+
+“WI-FI or Broadband at home” is a factor that influences customers to automate their houses for convenience and ease of operation as validated through Chi Square Statistical test. Also, 78% of the respondents are interested in Home automation solution and are keen on getting more information about it. 77% of these customers have internet connectivity at their home. 
+2.3	Cluster Analysis Insights
+
+Clustering Methodology was applied on 189 Residential customers. The key traits of each cluster w.r.t to Home Automation Solution are:
+•	Customers belonging to Cluster 1 depicted Energy saving as the most important feature of Home Automation. The most critical equipment which they wish to control are AC & water pump.
+•	The topmost appliance that Customers from Cluster 2 would like to automate is Geyser and the reason for automating their houses are Reducing electricity bill, convenience and ease of operation.
+•	For cluster 3 the topmost appliances are AC followed by Refrigerators. Savings on Electricity is an important factor for these consumers in automating their houses.
+
+3.	AUTOMATED DEMAND RESPONSE
+
+A primary survey of 36 Industrial and Commercial consumer was conducted to gauge the market potential of existing and emerging Value Added Services such as Automated Demand Response. Demand Response coupled with Time of Use pricing can be a solution which can be implemented in the short term and provide benefits to utilities as well as consumers in a sustainable manner. It is in its nascent stages in India. NCT of Delhi has set a tariff to incentivize the consumers to opt for DR. Therefore, a survey was conducted to see the potential of the Demand Response among the consumers.
+
+3.1	Key Insights
+
+•	Survey findings suggests that 72% people keep their operations off only on one day. These can be the potential targets for Demand Response program. 
+
+•	64% people monitor energy consumption monthly followed by 25% people who monitor their energy consumption weekly. 8% of people monitor their energy consumption seasonally while only 3% people monitor their energy consumption daily. These suggests that large number of consumers are conscious about their Electricity bill and hence can be made aware about the benefits of ADR.
+
+•	Further, 81% of the people are unaware about the DERC scheme w.r.t to Demand Response. Moreover, 60% people are not ready to shift their load at particular time slot at current incentive level. This suggests that Incentives on ADR program can encourage people to opt for the scheme and hence there is a need to review the existing tariff regulations. 
+
+3.2	Cluster Analysis Insights
+
+Clustering was done on 32 Commercial & Industrial customers. The key findings for the clustering w.r.t to ADR are given below:
+•	Cluster 1 consisted of consumers with average sanction load of 189 KW and have been associated with the Utility since 16 years. These are potential target for Automated Demand Response as 75% respondents are interested in shifting their load at current incentive level provided by the Utility. Electricity cost is at most 10 % of the operational cost for these consumers. Consumers in this cluster monitor their consumption on a monthly basis.
+
+•	Cluster 2 consisted of consumers with average sanction load of 109 KW and have been associated with the Utility since 15 years. Around 40 % of the consumers are willing to shift their load at current incentive level. Consumers in this cluster monitor their consumption on a monthly basis. Few monitor their bill weekly. Electricity cost is at most 15 % of the operational cost for these consumers.
+
+•	Cluster 3 consisted of consumers with average sanction load of 142 KW and have been associated with the Utility since 12 years. The consumers are aware of the DERC scheme provided to consumer about Automated Demand Response but are not willing to shift their load. All consumers in this cluster monitor their consumption on a monthly basis. Electricity cost is at least 21 % of the operational cost for these consumers.
+                    
+4.	DEMAND SIDE MANAGEMENT
+                     
+
+4.1	Key Insights
+
+•	The survey findings showed that around 85% of the respondents are interested in availing energy Audit Services. One may need to develop communication strategy to enhance awareness level about the benefits of schemes, especially for Industrial and commercial segments. Probably in the form of business case as they are the categories who are most sensitive to savings.
+•	In schemes like LED bulbs and LED Tube light people have shown good participation. Least participation is observed in AC Replacement scheme and among those participated has an average bill amount of Rs. 1000-5000. Also, among the participants in AC Replacement scheme, 90% are happy with the service. 
+
+4.2 Cluster Analysis Insights
+Further, to holistically analyze the survey results and get an overview of the consumer awareness clustering was applied on a set of 189 Residential customers to find groups of consumers who have availed DSM Schemes or are aware of the existing DSM Schemes.
+The main findings of the clustering w.r.t DSM are as follows:
+
+•	Cluster 1 consists of consumers with average sanction load of 4-5 KW. These are the consumers who are price conscious and they have medium fluctuations in Bill pattern. Also, these are the potential target for DSM. 
+•	Cluster 2 consists of consumers with average Sanction load of 3 KW. Consumers in this cluster has least Fluctuation in bills over the years. Also, 56% respondents in this cluster will recommend these schemes to others.
+•	Cluster 3 consists of an average Sanction Load of 6-10 KW. Highest Fluctuation in bills over the years are evident in this cluster. Also, 86% respondents in this cluster are happy with the schemes and will recommend to others as well. 
+
+Overall, the findings indicates that large number of people who have availed DSM schemes are happy with the services. This is a good indicator for taking forward DSM services on a large scale. Also, the awareness program needs to be conducted on a regular basis to make consumers aware of the DSM benefits.
+
+5.	ELECTRIC VEHICLES
+
+5.1	Key Insights
+
+Ownership Behavior for 4 W and 2 W
+•	Around 80% of respondents have purchased their car and only 20% of the customers have taken the car on Lease.
+•	Around 86% of respondents have purchased two wheelers and only 14% respondents have taken two wheelers on Lease.
+
+Parking trend at home – relevant for developing home charging 
+•	About 50% of respondents park their vehicle on street when at home, around 40% use home apartment to park their vehicle and only 10% people use shared parking.
+•	There are considerable spaces for Home Charging. However unlike West there is a huge scope for On –Road charging (it is expected to be 30% against 5-10% in West)
+Parking trend at public space- relevant for developing on road / public charging
+•	About 52% of respondents park their vehicle in office parking 
+•	15% use public parking space to park their vehicle 
+•	10% parks vehicle at Metro station 
+•	16% respondents park their vehicle on street
+•	This reflects potential to tie up with Office buildings, Municipal Land and Metro Station.
+Factors affecting Purchase Decision of EV
+•	Mileage and Price are emerging as the significant factors being considered impacting the purchase decision made by the consumers. 
+•	Maximum distance covered by 2 wheelers is 20km per day. One might not create dedicated charging points for 2W. Home charging will be the most preferred mode of charging.
+•	Also, the findings showed 30% reported that they plan to replace their existing car and purchase the new one in 2 years’ time. Out of which 50% reported considering purchase of plug-in electric car for next purchase. Around 50% of the respondents in self-owned houses will consider buying Electric Vehicle in their next purchase. 
+
+5.2	Chi Square Test Result
+
+•	The “Average Distance travelled by car” is a factor that influences willingness to pay for Electric Vehicle. Consumer who travels less than 20 km per day are willing to pay 2-8 lakhs for EV vehicle. Consumers who travel greater than 50 km per day are willing to pay 8-15 lakhs for EV vehicle.
+The above study shows the interest of consumers in replacing their old vehicle with Electric Vehicles. This suggests that there is a need to aware people about the benefits of Electric Vehicle and financial benefits on acquisition cost and optimum charging cost can motivate consumers to move to EV. These survey findings further suggests that though Home Charging will be the most preferred source of charging of Electric Vehicles, however due to lack of space and availability of structured parking there is also a huge potential of On Road Charging. 
+
+6.	OVERALL SUMMARY
+
+The following is the synthesis of the findings established in the Primary Research undertaken to assess the market potential of Solar Rooftop Solution, Home Automation, ADR, Electric Vehicle and Demand Side Management.
+6.1 Cluster Analysis Insights- Residential Customers
+The key traits of the overall behaviour of 189 Residential customers are shown below:
+Cluster 1
+•	Associated with utility since 6 years. Potential target for Solar as greater than 80% respondents are interested in Roof Top Solar. Price conscious, medium fluctuations in bill pattern.
+•	Potential target for DSM as Energy saving emerged as the most important feature of Home Automation and AC & water pump being the most critical equipment which they wish to control. More conscious about saving and monitoring electricity bill hence most likely to opt for Home Automation.
+
+Cluster 2
+•	Associated with TPDDL since 5 years. Most likely to opt for DSM Schemes (Specially AC). Least Fluctuation in bills over the years. 
+•	Energy saving is the most important feature of Home Automation and AC & Geysers are the  most critical equipment which they wish to control. Potential target for Electric Vehicle (assumed to be 2W). 
+•	72% are open to opt for EV and 90% respondents consider price and maintenance as critical factor for purchase of EV. If the cost of running is lower than CNG, they will shift to EV.
+
+Cluster 3
+•	Associated with TPDDL since 6.5 years. Potential target for Solar as greater than 80% respondents are interested in Roof Top Solar. 
+•	Highest Fluctuation in bills over the years are evident. 80% of the respondents are keen on Energy saving on their electricity bill and can be targeted for Home Automation. AC & Refrigerators are the most critical equipment which they wish to control. 86% respondents have even availed AC scheme under DSM initiatives and 88% are happy with services and savings. 
+•	66% respondents are ready to move to EV and 30% are ready to spend nearly Rs. 8-15 lacs on EV and hence are potential target for Electric Vehicles.
+
+6.2 Cluster Analysis Insights- Commercial & Industrial Customers
+The key traits of the overall behaviour of 32 Commercial and Industrial customers are shown below:
+Cluster 1
+•	Associated with utility since 16 years and average sanction load is 189 KW. Potential target for Automated Demand Response as 75% respondents are interested in shifting their load at current incentive level provided by the Utility. 
+•	These consumers monitor their consumption on a monthly basis. Electricity cost is at most 10 % of the operational cost for these consumers.These customers are most aware about the benefits of installing the Solar Rooftop solution and are also potential target for Solar as around 75% are interested in Solar Rooftop.
+
+Cluster 2
+•	Associated with utility since 15 years. Average Sanction Load is 109 KW. Around 40 % of the consumers are willing to shift their load at current incentive level. Consumers in this cluster monitor their consumption on a monthly basis. Few monitor their bill weekly. Electricity cost is at most 15 % of the operational cost for these consumers. 
+•	These customers are least aware about the benefits of the Solar Rooftop and around 40 % of the consumers are not interested due to High upfront cost during installation. The cluster need to be targeted for awareness campaigns and also should be made aware about the financial assistance provided by the government.
+
+Cluster 3
+•	Associated with utility since 12 years and have average sanction load of 142 KW. These consumers are aware of the DERC scheme provided to consumer about Automated Demand Response but are not willing to shift their load. All consumers in this cluster monitor their consumption on a monthly basis. 
+•	Electricity cost is at least 21 % of the operational cost for these consumers. The consumers are not interested in Solar Rooftop solution but they are fully aware about the benefits of Solar. As these customers have the highest electricity bill, hence the reason for unwillingness in participation in any of the services to reduce their bill and cut down costs needs to be researched more.
+
+
+
+
+
