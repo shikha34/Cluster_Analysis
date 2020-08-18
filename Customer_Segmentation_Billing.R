@@ -1,6 +1,6 @@
 #-------CLUSTERING----------------
 rm(list=ls())
-library(qualityTools)
+
 library(sqldf)
 library(stats)
 library(base)
@@ -10,14 +10,12 @@ library(readxl)
 library(dplyr)
 library(lubridate)
 library(qcc)
-finaldsm <- read.csv("D:/BILL/finaldsm.csv")
-
-set.seed(76221853)
-library(dplyr) # for data cleaning
-library(ISLR) # for college dataset
 library(cluster) # for gower similarity and pam
 library(Rtsne) # for t-SNE plot
 library(ggplot2) # for visualization
+
+##Reading the billing data of employees
+finaldsm <- read.csv("D:/BILL/finaldsm.csv")
 dsmg=finaldsm[-c(1,2,17:20,22,24,34:45)]
 str(dsmg)
 dsmg$x1.0_TR_Split_BEE_5_STAR=(dsmg$X.x1.0_TR_Split_BEE_5_STAR-min(dsmg$X.x1.0_TR_Split_BEE_5_STAR))/(max(dsmg$X.x1.0_TR_Split_BEE_5_STAR)-min(dsmg$X.x1.0_TR_Split_BEE_5_STAR))
@@ -45,13 +43,15 @@ dsmg$Avg_Dec_bill=(dsmg$Avg_Dec_bill-min(dsmg$Avg_Dec_bill))/(max(dsmg$Avg_Dec_b
 dsmg$Two_Year_Avg_PF=(dsmg$Two_Year_Avg_PF-min(dsmg$Two_Year_Avg_PF))/(max(dsmg$Two_Year_Avg_PF)-min(dsmg$Two_Year_Avg_PF))
 dsmg$Two_Year_Avg_VL=(dsmg$Two_Year_Avg_VL-min(dsmg$Two_Year_Avg_VL))/(max(dsmg$Two_Year_Avg_VL)-min(dsmg$Two_Year_Avg_VL))
 
+#For reproproducibility
+set.seed(76221853)
 
-
+# Calcualting Distance Matrix
 dist <- daisy(dsmg,metric = "euclidean",stand = FALSE)
 summary(dist)
 mat <- as.matrix(dist)
 
-#kmediods----
+#k-mediods Clustering
 sil_width <- c()
 for(i in 2:10){
   
@@ -82,7 +82,8 @@ require(tables)
 names(fcluster)=gsub(".","_",fixed=TRUE,names(fcluster))
 colnames(fcluster)[7]<-"x1_0_TR_Split_BEE_5_STAR"
 colnames(fcluster)[2]<-"District"
-profile<-tabular(1+Sanction_Load_KW+Issued_Qty+Amount_Paid+daysin_tpddl+x1_0_TR_Split_BEE_5_STAR+x1_0_TR_Window_BEE_5_STAR+x1_5_TR_Inverter+x1_5_TR_Split_BEE_5_STAR+x1_5_TR_Window_BEE_5_STAR+x20W_LED_TUBELIGHT
+prof
+ile<-tabular(1+Sanction_Load_KW+Issued_Qty+Amount_Paid+daysin_tpddl+x1_0_TR_Split_BEE_5_STAR+x1_0_TR_Window_BEE_5_STAR+x1_5_TR_Inverter+x1_5_TR_Split_BEE_5_STAR+x1_5_TR_Window_BEE_5_STAR+x20W_LED_TUBELIGHT
                  +x50W_CEILING_FAN+x9W_LED_BULB+CROMPTON_GREAVES+COMPACT_LAMPS+GODREJ+HITACHI+HQ_LAMPS+LEDVANCE+MARC_ENTERPRISES_PVT_LTD+ORIENT_ELECTRICS+OSRAM_INDIA_PVT_LTD     
                  +PHILIPS+SURYA_ROSHNI+VOLTAS+dsm2$purchase_times~
                    mean+(mean*clust_3)+(mean*clust_4)+(mean*clust_5),
@@ -105,8 +106,6 @@ pro22<-data.frame(pro2)
 
 #--------visualisation--------
 #taking orginal data
-
-
 tsne_obj <- Rtsne(dist, is_distance = TRUE)
 
 tsne_data <- tsne_obj$Y %>%
@@ -133,6 +132,7 @@ km_fit6<-kmeans(dsmg,6)
 fcluster1<-cbind(finaldsm,clust_3=km_fit3$cluster,clust_4=km_fit4$cluster,clust_5=km_fit5$cluster,clust_6=km_fit6$cluster)
 
 write.csv(fcluster1,"D:/DSM/bill/km.csv")
+
 ###Profiling
 
 #Converting into factors
@@ -155,6 +155,7 @@ p<-tabular(1+Avg_Jan_bill+Avg_Feb_bill+Avg_Mar_bill+Avg_Apr_bill+Avg_May_bill+Av
 p1<-as.matrix(p)
 p2<-data.frame(p1)
 write.csv(p2,"D:/DSM/bill/contniuous_km.csv")
+
 fcluster1$COMPACT_LAMPS=as.character(fcluster1$COMPACT_LAMPS)
 fcluster1$District__NDPL_=as.character(fcluster1$District__NDPL_)
 fcluster1$Ownership_Group=as.character(fcluster1$Ownership_Group)
@@ -187,7 +188,7 @@ proo2<-as.matrix(proo)
 proo22<-data.frame(proo2)
 
 
-#Graph based on k-means - Optional
+#Graph based on k-means
 require(cluster)
 
 clusplot(dsmg, #dataframe
@@ -198,4 +199,3 @@ clusplot(dsmg, #dataframe
          labels = 2 # Labels clusters and cases
 )
 
-#-------non dsm segmentation based on rules-----------------
